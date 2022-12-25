@@ -11,7 +11,7 @@ export const prevIsDecimal = (expression: string, data: InputData): boolean => {
         return isDecimal
     }
 
-    while (ex.length && prevIsDigit(ex) || prevIsSeparator(ex)) {
+    while ((ex.length && prevIsDigit(ex)) || prevIsSeparator(ex)) {
         const lastInput = getLastInput(ex)
 
         if (lastInput === OperationSymbols.separator) {
