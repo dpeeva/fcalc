@@ -1,0 +1,27 @@
+.calc-button {
+  margin: 5px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  width: 90px;
+  line-height: 2.2;
+  background: #000;
+  font-family: inherit;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+.calc-button:disabled {
+  opacity: 0.3;
+  cursor: unset;
+}
+.calc-button:hover:not([disabled]) {
+  background: #5d4f09;
+}
+.calc-button-digit {
+  background: #86710e;
+}
+.calc-button-digit:hover {
+  background: #5d4f09;
+}
+/*# sourceMappingURL=Button.css.map */

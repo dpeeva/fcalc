@@ -1,5 +1,0 @@
-export * from "./Digit"
-export * from "./Operator"
-export * from "./System"
-export * from "./Separator"
-export * from "./Sign"

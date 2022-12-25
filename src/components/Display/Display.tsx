@@ -1,5 +1,6 @@
 import * as React from "react"
 import { IDisplay } from "../../typings"
+import "./Display.css"
 
 export class Display extends React.PureComponent<IDisplay> {
     val: string

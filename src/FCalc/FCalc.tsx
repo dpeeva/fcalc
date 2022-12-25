@@ -1,12 +1,12 @@
 import * as React from "react"
 import { observer } from "mobx-react"
 import { FCalcProps } from "../typings"
-import "./FCalc.less"
+import "./FCalc.css"
 
 import { StateStore } from "../StateStore"
 import { Parser } from "../Parser"
 
-import { Display, FCalcButton } from "../components"
+import { Button, Display } from "../components"
 
 @observer
 export class FCalc extends React.Component<FCalcProps> {
@@ -57,7 +57,7 @@ export class FCalc extends React.Component<FCalcProps> {
                     (button, i) => {
 
                         return (
-                            <FCalcButton
+                            <Button
                                 key={`calc-button-${i}`}
                                 name={button.name}
                                 type={button.type}
