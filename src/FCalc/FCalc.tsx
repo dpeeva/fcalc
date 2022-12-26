@@ -7,7 +7,7 @@ import "./FCalc.css"
 import { StateStore } from "../StateStore"
 import { Parser } from "../Parser"
 
-import { Button, Display } from "../components"
+import { Button, Display } from "./components"
 
 interface Props {
     state: StateStore
