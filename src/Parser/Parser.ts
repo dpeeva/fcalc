@@ -1,25 +1,25 @@
 import { InputData } from "../typings"
 import { ButtonTypes, buttonValue, OperationSymbols, operationKey } from "../enums"
-import { Buffer } from "../Buffer"
+import { DataFacade } from "../DataFacade"
 
 export class Parser {
-    private buffer: Buffer
+    private facade: DataFacade
 
-    constructor(facade: Buffer) {
-        this.buffer = facade
+    constructor(facade: DataFacade) {
+        this.facade = facade
     }
 
     clear(): string {
-        return this.buffer.reset()
+        return this.facade.reset()
     }
 
     delete(): string {
-        return this.buffer.delete()
+        return this.facade.delete()
     }
 
     eval(): string {
-        this.buffer.updateResult()
-        return this.buffer.result
+        this.facade.updateResult()
+        return this.facade.result
     }
 
     isValidInput(key: buttonValue): boolean {
@@ -28,16 +28,16 @@ export class Parser {
 
     getDisplayData(key: buttonValue): string {
         if (!this.isValidInput(key)) {
-            return this.buffer.result
+            return this.facade.result
         }
 
         const value = this.parseKey(key)
 
         if (value) {
-            return this.buffer.updateExpression(value)
+            return this.facade.updateExpression(value)
         }
 
-        return this.buffer.result
+        return this.facade.result
     }
 
     parseKey(key: buttonValue): InputData {

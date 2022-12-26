@@ -1,29 +1,33 @@
 import * as React from "react"
 import { config } from "./config"
 import { FCalc } from "./FCalc"
-import { Buffer } from "./Buffer"
+import { DataFacade } from "./DataFacade"
 import { Parser } from "./Parser"
 import { Provider } from "./Provider"
 import { StateStore } from "./StateStore"
 import "./App.css"
 
-function App() {
-    const parser = new Parser(
-        new Buffer(
-            new Provider()
+export class App extends React.PureComponent {
+    parser: Parser
+    state: StateStore
+
+    constructor(props: any) {
+        super(props)
+        this.parser = new Parser(
+            new DataFacade(
+                new Provider()
+            )
         )
-    )
-    const fcalcProps = {
-        state: new StateStore(parser),
-        parser: parser,
-        config: config
+        this.state = new StateStore(this.parser)
     }
 
-    return (
-        <div className="App">
-            <FCalc {...fcalcProps} />
-        </div>
-    )
+    render() {
+        return (
+            <FCalc {...{
+                parser: this.parser,
+                state: this.state,
+                config: config
+            }} />
+        )
+    }
 }
-
-export default App

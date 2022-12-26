@@ -1,5 +1,11 @@
 import { observable, action } from "mobx"
-import { OperationsProvider } from "../typings"
+
+interface OperationsProvider {
+    add: Function
+    subtract: Function
+    divide: Function
+    multiply: Function
+}
 
 /* Operations Provider acts like Retriever */
 export class Provider implements OperationsProvider {

@@ -1,6 +1,5 @@
-export * from "./BufferMock"
+export * from "./DataFacadeMock"
 export * from "./ParserMock"
-export * from "./OperationsProviderMock"
 export * from "./ButtonsConfigMock"
 export * from "./DisplayConfigMock"
 export * from "./FCalcConfigMock"

@@ -1,8 +1,11 @@
 import * as React from "react"
-import { IDisplay } from "../../typings"
 import "./Display.css"
 
-export class Display extends React.PureComponent<IDisplay> {
+interface Props {
+    val: string
+}
+
+export class Display extends React.PureComponent<Props> {
     val: string
 
     constructor(props: any) {

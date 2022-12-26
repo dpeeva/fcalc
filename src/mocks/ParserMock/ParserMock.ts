@@ -1,8 +1,8 @@
 import { Parser } from "../../Parser"
-import { BufferMock } from ".."
+import { DataFacadeMock } from "../DataFacadeMock"
 
 export class ParserMock extends Parser {
-    constructor(facade: BufferMock) {
+    constructor(facade: DataFacadeMock) {
         super(facade)
     }
 

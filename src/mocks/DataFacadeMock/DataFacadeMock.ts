@@ -1,7 +1,7 @@
-import { Buffer } from "../../Buffer"
+import { DataFacade } from "../../DataFacade"
 import { Provider } from "../../Provider"
 
-export class BufferMock extends Buffer {
+export class DataFacadeMock extends DataFacade {
     constructor() {
         super(new Provider())
     }

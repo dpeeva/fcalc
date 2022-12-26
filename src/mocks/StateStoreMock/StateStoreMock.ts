@@ -1,8 +1,8 @@
-import { BufferMock, ParserMock } from "../../mocks"
+import { DataFacadeMock, ParserMock } from "../../mocks"
 import { StateStore } from "../../StateStore"
 
 export class StateStoreMock extends StateStore {
     constructor() {
-        super(new ParserMock(new BufferMock()))
+        super(new ParserMock(new DataFacadeMock()))
     }
 }

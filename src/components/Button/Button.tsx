@@ -1,8 +1,16 @@
 import * as React from "react"
-import { IButton } from "../../typings"
+import { ButtonNames, ButtonTypes } from "../../enums"
 import "./Button.css"
 
-export const Button: React.FunctionComponent<IButton> = ({
+interface Props {
+    name: ButtonNames
+    type: ButtonTypes
+    label: string
+    isDisabled: boolean
+    onClick: (ev: React.SyntheticEvent) => void
+}
+
+export const Button: React.FunctionComponent<Props> = ({
     name,
     type,
     label,

@@ -1,10 +1,12 @@
 import { observable, action } from "mobx"
-import { DataFacade, InputData } from "../typings"
+import { InputData } from "../typings"
 import { ButtonTypes, OperationSymbols, DigitSymbols } from "../enums"
-import { getLastInput, prevIsOperator, prevIsSeparator, prevIsNumber, removeLastInput, getPrevNumber, shouldAddZero, getPrevOperator, changeOperator, shouldIgnoreSeparator } from "../helpers"
+import {
+    getLastInput, prevIsOperator, prevIsSeparator, prevIsNumber, removeLastInput, getPrevNumber, shouldAddZero, getPrevOperator, changeOperator, shouldIgnoreSeparator
+} from "../helpers"
 import { Provider } from "../Provider"
 
-export class Buffer implements DataFacade {
+export class DataFacade {
     public provider: Provider
     @observable result: string
     @observable expression: string
@@ -68,7 +70,7 @@ export class Buffer implements DataFacade {
     }
 
     /**
-     * Update buffer result, by evaluating expression
+     * Update facade result, by evaluating expression
      */
     @action updateResult(): string {
         if (!this.shouldEval(this.expression)) {

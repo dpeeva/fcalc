@@ -1,6 +1,7 @@
 import * as React from "react"
+import { observable } from "mobx"
 import { observer } from "mobx-react"
-import { FCalcProps } from "../typings"
+import { FCalcConfig } from "../typings"
 import "./FCalc.css"
 
 import { StateStore } from "../StateStore"
@@ -8,13 +9,19 @@ import { Parser } from "../Parser"
 
 import { Button, Display } from "../components"
 
-@observer
-export class FCalc extends React.Component<FCalcProps> {
-    private static instance: FCalc
+interface Props {
     state: StateStore
     parser: Parser
+    config: FCalcConfig
+}
 
-    constructor(props: FCalcProps) {
+@observer
+export class FCalc extends React.Component<Props> {
+    private static instance: FCalc
+    @observable state: StateStore
+    parser: Parser
+
+    constructor(props: Props) {
         super(props)
 
         this.parser = props.parser
@@ -74,7 +81,7 @@ export class FCalc extends React.Component<FCalcProps> {
 
     render() {
         return (
-            <div id="calc" className="calc">
+            <div className="calc" data-testid="fcalc">
                 {this.renderDisplay()}
                 {this.renderBody()}
             </div>

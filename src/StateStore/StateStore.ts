@@ -1,4 +1,4 @@
-import { observable, action } from "mobx"
+import { observable, action, makeAutoObservable } from "mobx"
 import { buttonKey, ButtonKeys, buttonValue } from "../enums"
 import { Parser } from "../Parser"
 
@@ -7,6 +7,7 @@ export class StateStore {
     public parser: Parser
 
     constructor(parser: Parser) {
+        makeAutoObservable(this)
         this.result = this.passKey()
         this.parser = parser
 
@@ -22,17 +23,18 @@ export class StateStore {
     }
 
     @action passKey(key?: buttonValue): string {
-        console.log(key)
-        if (!key) {
+        if (!this.parser || !key) {
             this.result = "0"
             return this.result
         }
 
-        if (this.parser.parseKey(key)) {
-            // TODO: simplify checks
-            if (key === "clear" || key === "delete" || key === "eval") {
-                this.result = this.parser[key]()
-            }
+        if (key === "clear") {
+            this.result = this.parser.clear()
+            return this.result
+        }
+
+        if (key === "delete") {
+            this.result = this.parser.delete()
             return this.result
         }
 
@@ -46,6 +48,11 @@ export class StateStore {
             this.result = "0"
             return this.result
         }
+
+        // if (this.parser[key]) {
+        //     this.result = this.parser[key]()
+        //     return this.result
+        // }
 
         this.result = this.parser.getDisplayData(key)
         return this.result

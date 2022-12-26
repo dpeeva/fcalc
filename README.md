@@ -1,5 +1,59 @@
-# fcalc
-Fancy Calculator with React and Mobx
+# Fancy Calculator with React and Mobx
+
+Task Description:
+
+## Provider (=> this is actually the Retriever!)
+Simulate third party provider which calculates the operations:
+
+* `add`
+* `subtract`
+* `divide`
+* `multiply`
+
+It would accept (`val1`, `val2`, "operation") and return the `result`
+
+
+## DataFacade
+* Communicates with the **Provider**
+* sends (`val1`, `val2`, "operation") from **Parser**
+* reacts on the `result` from the **Provider**
+
+
+## Parser
+* sends to the **DataFacade** (`val1`, `val2`, "operation")
+* reacts on the `result` from the **DataFacade**
+
+Accepts values from **StateStore**
+It has controllers which take the raw values and format them to (`val1`, `val2`, "operation")
+
+
+## StateStore
+* `click` and `key` event Listeners
+* Listeners will send values to the **Parser**
+
+For example,
+
+<pre>
+2
+5
+=
++
+</pre>
+
+reacts on the `result`
+
+## UI
+* buttons and screen
+* reacts on the `result` and renders in the screen
+
+
+## Requirements
+* Has to work with integer and decimal numbers in this format: `354`, `0.233`, `.233`, `(87 + .44)`
+* Operation with only two numbers (`2+6=8`, `4*10=40`)
+* Must be able to input negative numbers: `-2 + -5`
+* Must have a **Clear button**: clears everything and resets to `0`
+
+
 
 # Getting Started with Create React App
 
