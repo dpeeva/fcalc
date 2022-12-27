@@ -1,4 +1,4 @@
-import { OperationSymbols } from "../../enums"
+import { OperationSymbols } from "../../typings"
 import { getPrevOperator } from "./getPrevOperator"
 
 describe("getPrevOperator", () => {

@@ -11,7 +11,7 @@ const buttons = [
     { key: "7", value: "7" },
     { key: "8", value: "8" },
     { key: "9", value: "9" },
-    { key: "=", value: "equals" }, // "eval"
+    { key: "=", value: "equals" },
     { key: "/", value: "divide" },
     { key: "*", value: "multiply" },
     { key: "+", value: "plus" },
@@ -38,7 +38,7 @@ export const ButtonKeys: Record<buttonKey, buttonValue> = {
     7: "7",
     8: "8",
     9: "9",
-    "=": "equals", // "eval"
+    "=": "equals",
     "/": "divide",
     "*": "multiply",
     "+": "plus",

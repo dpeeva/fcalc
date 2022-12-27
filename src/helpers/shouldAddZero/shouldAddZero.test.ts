@@ -1,4 +1,4 @@
-import { ButtonTypes } from "../../enums"
+import { ButtonTypes } from "../../typings"
 import { shouldAddZero } from "./shouldAddZero"
 
 describe("shouldAddZero", () => {

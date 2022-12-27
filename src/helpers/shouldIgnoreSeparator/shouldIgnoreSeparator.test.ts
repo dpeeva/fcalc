@@ -1,4 +1,4 @@
-import { ButtonTypes } from "../../enums"
+import { ButtonTypes } from "../../typings"
 import { shouldIgnoreSeparator } from "./shouldIgnoreSeparator"
 
 describe("shouldIgnoreSeparator", () => {

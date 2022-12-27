@@ -1,5 +1,4 @@
-import { ButtonTypes, ButtonNames } from "../../enums"
-import { ButtonConfigType } from "../../typings"
+import { ButtonConfigType, ButtonNames, ButtonTypes } from "../../typings"
 
 export const ButtonsConfigMock: ButtonConfigType[] = [
     {

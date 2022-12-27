@@ -1,13 +1,13 @@
-import { observable, action, makeAutoObservable } from "mobx"
-import { buttonKey, ButtonKeys, buttonValue } from "../enums"
+import { action, makeObservable, observable } from "mobx"
+import { buttonKey, ButtonKeys, buttonValue } from "../typings"
 import { Parser } from "../Parser"
 
 export class StateStore {
     @observable public result: string
-    public parser: Parser
+    @observable public parser: Parser
 
     constructor(parser: Parser) {
-        makeAutoObservable(this)
+        makeObservable(this)
         this.result = this.passKey()
         this.parser = parser
 

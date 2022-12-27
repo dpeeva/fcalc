@@ -1,6 +1,5 @@
 import { observable, action } from "mobx"
-import { InputData } from "../typings"
-import { ButtonTypes, OperationSymbols, DigitSymbols } from "../enums"
+import { ButtonTypes, DigitSymbols, InputData, OperationSymbols } from "../typings"
 import {
     getLastInput, prevIsOperator, prevIsSeparator, prevIsNumber, removeLastInput, getPrevNumber, shouldAddZero, getPrevOperator, changeOperator, shouldIgnoreSeparator
 } from "../helpers"

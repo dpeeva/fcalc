@@ -1,6 +1,4 @@
-import { OperationSymbols, operationValue } from "../../enums"
+import { operationValue } from "../../typings"
 
 export const getPrevOperator = (operator: string): operationValue =>
-    operator === "-"
-        ? "+"
-        : "-"
+    operator === "-" ? "+" : "-"

@@ -1,4 +1,4 @@
-import { ButtonTypes } from "../../enums"
+import { ButtonTypes } from "../../typings"
 import { prevIsDecimal } from "./prevIsDecimal"
 
 describe("prevIsDecimal", () => {

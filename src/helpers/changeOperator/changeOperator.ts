@@ -1,4 +1,4 @@
-import { operationValue } from "../../enums"
+import { operationValue } from "../../typings"
 import { getLastInput } from "../getLastInput"
 import { removeLastInput } from "../removeLastInput"
 

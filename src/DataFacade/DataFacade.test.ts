@@ -1,4 +1,4 @@
-import { ButtonTypes, OperationSymbols } from "../enums"
+import { ButtonTypes, OperationSymbols } from "../typings"
 import { Provider } from "../Provider"
 import { DataFacade } from "./DataFacade"
 

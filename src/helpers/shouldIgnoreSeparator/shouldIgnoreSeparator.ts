@@ -1,5 +1,4 @@
-import { OperationSymbols } from "../../enums"
-import { InputData } from "../../typings"
+import { InputData, OperationSymbols } from "../../typings"
 import { prevIsDecimal } from "../prevIsDecimal"
 
 /**

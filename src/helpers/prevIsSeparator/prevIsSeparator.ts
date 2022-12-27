@@ -1,4 +1,4 @@
-import { OperationSymbols } from "../../enums"
+import { OperationSymbols } from "../../typings"
 import { getLastInput } from "../getLastInput"
 
 export const prevIsSeparator = (expression: string): boolean => {

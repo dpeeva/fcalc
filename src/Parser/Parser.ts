@@ -1,11 +1,13 @@
+import { makeObservable, observable } from "mobx"
 import { InputData } from "../typings"
-import { ButtonTypes, buttonValue, OperationSymbols, operationKey } from "../enums"
+import { ButtonTypes, buttonValue, OperationSymbols, operationKey } from "../typings"
 import { DataFacade } from "../DataFacade"
 
 export class Parser {
-    private facade: DataFacade
+    @observable private facade: DataFacade
 
     constructor(facade: DataFacade) {
+        makeObservable(this)
         this.facade = facade
     }
 
@@ -52,7 +54,7 @@ export class Parser {
         return this.prepareInputData(key)
     }
 
-    prepareInputData(key: string): InputData {
+    prepareInputData(key: buttonValue): InputData {
         return isNaN(parseFloat(key))
             ? { value: OperationSymbols[key as operationKey], type: ButtonTypes.Operator }
             : { value: key, type: ButtonTypes.Digit }

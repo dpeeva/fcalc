@@ -1,4 +1,4 @@
-import { OperationSymbols } from "../../enums"
+import { OperationSymbols } from "../../typings"
 import { InputData } from "../../typings"
 import { prevIsOperator, prevIsDigit, prevIsSeparator, shouldAddZero, getLastInput, removeLastInput } from "../../helpers"
 

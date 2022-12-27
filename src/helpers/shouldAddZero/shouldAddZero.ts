@@ -1,4 +1,4 @@
-import { ButtonTypes } from "../../enums"
+import { ButtonTypes } from "../../typings"
 import { InputData } from "../../typings"
 import { prevIsOperator } from "../prevIsOperator"
 
@@ -9,7 +9,7 @@ import { prevIsOperator } from "../prevIsOperator"
  */
 export const shouldAddZero = (expression: string, data: InputData): boolean => {
     // If expression is empty and data type is Operator
-    if (!expression.length && data.type === ButtonTypes.Operator ) {
+    if (!expression.length && data.type === ButtonTypes.Operator) {
         return true
     }
 

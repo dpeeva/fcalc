@@ -1,4 +1,4 @@
-import { ButtonNames, ButtonTypes } from "../enums"
+import { ButtonNames, ButtonTypes } from "../typings"
 
 export interface ButtonConfigType {
     name: ButtonNames
