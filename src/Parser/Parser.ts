@@ -44,11 +44,17 @@ export class Parser {
 
     parseKey(key: buttonValue): InputData {
         if (key === "plus-minus") {
-            return { value: OperationSymbols[key as operationKey], type: ButtonTypes.Sign }
+            return {
+                value: OperationSymbols[key as operationKey],
+                type: ButtonTypes.Sign
+            }
         }
 
         if (key === "separator") {
-            return { value: OperationSymbols[key as operationKey], type: ButtonTypes.Separator }
+            return {
+                value: OperationSymbols[key as operationKey],
+                type: ButtonTypes.Separator
+            }
         }
 
         return this.prepareInputData(key)
@@ -56,7 +62,13 @@ export class Parser {
 
     prepareInputData(key: buttonValue): InputData {
         return isNaN(parseFloat(key))
-            ? { value: OperationSymbols[key as operationKey], type: ButtonTypes.Operator }
-            : { value: key, type: ButtonTypes.Digit }
+            ? {
+                value: OperationSymbols[key as operationKey],
+                type: ButtonTypes.Operator
+            }
+            : {
+                value: key,
+                type: ButtonTypes.Digit
+            }
     }
 }
