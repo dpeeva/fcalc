@@ -1,13 +1,9 @@
 import * as React from "react"
-import { ButtonNames, ButtonTypes } from "../../../enums"
+import { ButtonConfigType } from "../../../typings"
 import "./Button.css"
 
-interface Props {
-    name: ButtonNames
-    type: ButtonTypes
-    label: string
-    isDisabled: boolean
-    onClick: (ev: React.SyntheticEvent) => void
+export interface Props extends ButtonConfigType {
+    handler: (ev: React.SyntheticEvent) => void
 }
 
 export const Button: React.FunctionComponent<Props> = ({
@@ -15,13 +11,13 @@ export const Button: React.FunctionComponent<Props> = ({
     type,
     label,
     isDisabled,
-    onClick
+    handler
 }) => (
     <button
         className={`calc-button calc-button-${type.toLowerCase()}`}
+        data-testid={`calc-button-${name}`}
         disabled={isDisabled}
-        onClick={onClick}
-        data-name={name}
+        onClick={handler}
     >
         {label}
     </button>

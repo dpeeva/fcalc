@@ -1,6 +1,6 @@
 import { ButtonNames, ButtonTypes } from "../enums"
 
-export type ButtonConfigType = {
+export interface ButtonConfigType {
     name: ButtonNames
     type: ButtonTypes
     label: string

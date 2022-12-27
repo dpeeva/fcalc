@@ -1,7 +1,7 @@
 import * as React from "react"
-import { observable } from "mobx"
 import { observer } from "mobx-react"
-import { FCalcConfig } from "../typings"
+import { observable } from "mobx"
+import { ButtonConfigType, FCalcConfig } from "../typings"
 import "./FCalc.css"
 
 import { StateStore } from "../StateStore"
@@ -16,20 +16,15 @@ interface Props {
 }
 
 @observer
-export class FCalc extends React.Component<Props> {
-    private static instance: FCalc
+export class FCalc extends React.PureComponent<Props> {
     @observable state: StateStore
-    parser: Parser
+    @observable parser: Parser
 
     constructor(props: Props) {
         super(props)
 
         this.parser = props.parser
         this.state = props.state
-    }
-
-    static getInstance() {
-        return FCalc.instance
     }
 
     renderDisplay() {
@@ -61,7 +56,7 @@ export class FCalc extends React.Component<Props> {
         return (
             <div className="calc-body-inner">
                 {buttons.map(
-                    (button, i) => {
+                    (button: ButtonConfigType, i: number) => {
 
                         return (
                             <Button
@@ -70,7 +65,7 @@ export class FCalc extends React.Component<Props> {
                                 type={button.type}
                                 label={button.label}
                                 isDisabled={button.isDisabled}
-                                onClick={() => this.state.passKey(button.name)}
+                                handler={() => this.state.passKey(button.name)}
                             />
                         )
                     }
