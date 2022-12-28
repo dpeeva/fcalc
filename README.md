@@ -1,5 +1,7 @@
 # Fancy Calculator with React and Mobx
 
+![Fancy Calculator](https://github.com/dpeeva/fcalc/blob/main/fcalc.jpg?raw=true)
+
 Task Description:
 
 ## Provider (=> this is actually the Retriever!)
