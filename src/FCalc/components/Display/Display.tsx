@@ -16,9 +16,9 @@ export class Display extends React.PureComponent<Props> {
 
     render() {
         return (
-            <div className={`calc-display-field`}>
+            <section className="calc-display">
                 {this.props.val}
-            </div>
+            </section>
         )
     }
 }

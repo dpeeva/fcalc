@@ -27,21 +27,6 @@ export class FCalc extends React.PureComponent<Props> {
         this.state = props.state
     }
 
-    renderDisplay() {
-        return (
-            <section className="calc-display">
-                <div className="calc-display-inner">
-                    {
-                        <Display
-                            key={`calc-display-field`}
-                            val={this.state.result}
-                        />
-                    }
-                </div>
-            </section>
-        )
-    }
-
     renderBody() {
         return (
             <section className="calc-body">
@@ -77,7 +62,10 @@ export class FCalc extends React.PureComponent<Props> {
     render() {
         return (
             <div className="calc" data-testid="fcalc">
-                {this.renderDisplay()}
+                <Display
+                    key={`calc-display-field`}
+                    val={this.state.result}
+                />
                 {this.renderBody()}
             </div>
         )
