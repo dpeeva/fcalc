@@ -8,6 +8,7 @@ import { StateStore } from "../StateStore"
 import { Parser } from "../Parser"
 
 import { Button, Display } from "./components"
+import { Body } from "./components/Body"
 
 interface Props {
     state: StateStore
@@ -27,38 +28,6 @@ export class FCalc extends React.PureComponent<Props> {
         this.state = props.state
     }
 
-    renderBody() {
-        return (
-            <section className="calc-body">
-                {this.renderButtonsList()}
-            </section>
-        )
-    }
-
-    renderButtonsList() {
-        const buttons = this.props.config.buttons
-
-        return (
-            <div className="calc-body-inner">
-                {buttons.map(
-                    (button: ButtonConfigType, i: number) => {
-
-                        return (
-                            <Button
-                                key={`calc-button-${i}`}
-                                name={button.name}
-                                type={button.type}
-                                label={button.label}
-                                isDisabled={button.isDisabled}
-                                handler={() => this.state.passKey(button.name)}
-                            />
-                        )
-                    }
-                )}
-            </div>
-        )
-    }
-
     render() {
         return (
             <div className="calc" data-testid="fcalc">
@@ -66,7 +35,10 @@ export class FCalc extends React.PureComponent<Props> {
                     key={`calc-display-field`}
                     val={this.state.result}
                 />
-                {this.renderBody()}
+                <Body
+                    buttons={this.props.config.buttons}
+                    handler={this.state.passKey.bind(this.state)}
+                />
             </div>
         )
     }
