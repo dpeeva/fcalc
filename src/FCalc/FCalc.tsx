@@ -32,7 +32,6 @@ export class FCalc extends React.PureComponent<Props> {
         return (
             <div className="calc" data-testid="fcalc">
                 <Display
-                    key={`calc-display-field`}
                     val={this.state.result}
                 />
                 <Body
