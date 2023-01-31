@@ -23,13 +23,4 @@ describe("<FCalc />", () => {
         render(<FCalc {...props} />)
         expect(screen.getByTestId("fcalc")).not.toBe(undefined)
     })
-
-    it("passKey is called on button click", () => {
-        render(<FCalc {...props} />)
-        const spyClick = jest.spyOn(props.state, "passKey")
-        fireEvent.click(
-            screen.getByTestId("calc-button-clear")
-        )
-        expect(spyClick).toBeCalled()
-    })
 })

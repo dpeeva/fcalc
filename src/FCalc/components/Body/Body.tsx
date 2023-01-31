@@ -15,18 +15,16 @@ export const Body: React.FunctionComponent<Props> = ({
     <section className="calc-body">
         <div className="calc-body-inner">
             {buttons.map(
-                (button: ButtonConfigType, i: number) => {
-                    return (
-                        <Button
-                            key={`calc-button-${i}`}
-                            name={button.name}
-                            type={button.type}
-                            label={button.label}
-                            isDisabled={button.isDisabled}
-                            handler={() => handler(button.name)}
-                        />
-                    )
-                }
+                (button: ButtonConfigType, i: number) => (
+                    <Button
+                        key={`calc-button-${i}`}
+                        name={button.name}
+                        type={button.type}
+                        label={button.label}
+                        isDisabled={button.isDisabled}
+                        handler={() => handler(button.name)}
+                    />
+                )
             )}
         </div>
     </section>
